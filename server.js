@@ -7,8 +7,8 @@ const server = new Hapi.Server({
 server.route({
 	method: 'GET',
 	path:'/hello',
-	handler: (request, reply) => {
-		return reply('hello world');
+	handler: function (request, h) => {
+		return 'hello world';
 	}
 });
 
