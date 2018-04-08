@@ -7,7 +7,7 @@ const server = new Hapi.Server({
 server.route({
 	method: 'GET',
 	path:'/hello',
-	handler: function (request, h) => {
+	handler: function (request, h) {
 		return 'hello world';
 	}
 });
