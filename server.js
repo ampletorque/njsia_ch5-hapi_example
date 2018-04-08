@@ -3,12 +3,17 @@ const server = new Hapi.Server({
 	host: 'localhost',
 	port: 8000
 })
+const Inert = require('inert');
 
 server.route({
 	method: 'GET',
-	path:'/hello',
-	handler: function (request, h) {
-		return 'hello world';
+	path: '/{param*}',
+	handler: {
+		directory: {
+			path: '.',
+			redirectToSlash: true,
+			index: true
+		}
 	}
 });
 
