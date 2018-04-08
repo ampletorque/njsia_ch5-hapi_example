@@ -1,10 +1,8 @@
 const Hapi = require('hapi');
-const server = new Hapi.Server();
-
-server.connection({
+const server = new Hapi.Server({
 	host: 'localhost',
 	port: 8000
-});
+})
 
 server.route({
 	method: 'GET',
