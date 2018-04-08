@@ -8,7 +8,7 @@ const Inert = require('inert');
 server.route({
 	method: 'GET',
 	path: '/{param*}',
-	handler: {
+        handler: function (request, h) {
 		directory: {
 			path: '.',
 			redirectToSlash: true,
